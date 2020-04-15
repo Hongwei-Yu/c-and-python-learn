@@ -8,7 +8,7 @@ def getHMLTEXT(url):
     except:
         return "产生异常"#产生HTTPError异常就会返回到这个expect语句
 if __name__=="__main__":
-    url="https://item.jd.com/2967929.html"
+    url=""
     print(getHMLTEXT(url))
 #这是爬取网页的通用代码框架
 
