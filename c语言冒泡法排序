@@ -1,0 +1,54 @@
+/*1.10个整数从键盘输入，实现从大到小的排序，要求：完成数组的定义、输入、冒泡排序和输出。*/
+#include <stdio.h>
+void input(int *p);
+void output(int *p);
+void exchange(int *a,int *b);
+int search_order(int*p);
+
+int main()
+{
+    int array[10]={0,0,0,0,0,0,0,0,0,0};
+    input(array);
+    search_order(array);
+    output(array);
+}
+
+    
+
+void input(int *p)//输入整数入口
+{
+int i;    
+for(i=0;i<10;i++)
+{scanf("%d",&p[i]);
+}
+}
+
+
+void output(int *p)//输出排序后的出口
+{
+int i;
+printf("排列后的顺序是");
+for(i=0;i<10;i++)    
+printf("\n%d",p[i]);
+}
+
+
+void exchange(int *a,int *b)//函数交换，
+{
+int middle=0;
+middle=*b;
+*b=*a;
+*a=middle;
+}
+
+
+int search_order(int *p)//排序法接口，这
+{
+    int i,a;
+for(a=0;a<10;a++)    
+ for(i=0;i<9;i++)
+  {
+      if(p[i]>p[i+1])
+    exchange(&p[i],&p[i+1]);
+  }
+}
